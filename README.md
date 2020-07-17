@@ -1,16 +1,33 @@
-# pagApi
+# Flutter Projeto
+# Mercado pago SDK 
 
-A new Flutter project.
 
-## Getting Started
+alterar no arquivo : Android/app/build.gradle
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+   defaultConfig {
+        ...
+          minSdkVersion 19
+       
+    }
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+flutter {
+    source '../..'
+}
+
+dependencies {
+    ...
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
+   
+
+}
